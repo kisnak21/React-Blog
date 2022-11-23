@@ -1,5 +1,5 @@
-import React from "react";
-import "./sidebar.css";
+import React from 'react';
+import './sidebar.css';
 
 export default function SideBar() {
   return (
@@ -30,10 +30,10 @@ export default function SideBar() {
       <div className="sideBarItem">
         <span className="sideBarTitle">FOLLOW US</span>
         <div className="sideBarSocial">
-        <i className="sideBarIcon fa-brands fa-square-instagram"></i>
-        <i className="sideBarIcon fa-brands fa-square-twitter"></i>
-        <i className="sideBarIcon fa-brands fa-square-pinterest"></i>
-        <i className="sideBarIcon fa-brands fa-square-github"></i>
+          <i className="sideBarIcon fa-brands fa-square-instagram" />
+          <i className="sideBarIcon fa-brands fa-square-twitter" />
+          <i className="sideBarIcon fa-brands fa-square-pinterest" />
+          <i className="sideBarIcon fa-brands fa-square-github" />
         </div>
       </div>
     </div>
