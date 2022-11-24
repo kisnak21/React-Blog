@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import './login.css';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   return (
@@ -13,7 +14,9 @@ export default function Login() {
         <input type="password" className="loginInput" placeholder="Enter your password..." />
         <button type="submit" className="loginButton">Login</button>
       </form>
-      <button type="submit" className="loginRegisterButton">Register</button>
+      <button type="submit" className="loginRegisterButton">
+        <Link className="link" to="/register">Register</Link>
+      </button>
     </div>
   );
 }
