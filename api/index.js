@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = express();
 const dotenv = require('dotenv');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const authRoute = require('./routes/auth');
@@ -11,6 +12,7 @@ const categoryRoute = require('./routes/categories');
 
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 mongoose.connect(process.env.MONGO_DB).then(console.log('connected to mongodb')).catch((err) => { console.log(err); });
 
@@ -27,6 +29,15 @@ const upload = multer({ storage });
 app.post('/api/upload', upload.single('file'), (req, res) => {
   res.status(200).json('file has been uploaded');
 });
+
+const allowCORS = (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+};
+
+app.use(allowCORS);
 
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
