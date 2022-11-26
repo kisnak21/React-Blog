@@ -1,9 +1,16 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useContext } from 'react';
 import './topbar.css';
 import { Link } from 'react-router-dom';
+import { Context } from '../../context/Context';
 
 export default function TopBar() {
-  const user = false;
+  const { user, dispatch } = useContext(Context);
+
+  const handlerLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+  };
   return (
     <div className="top">
       <div className="topLeft">
@@ -26,14 +33,14 @@ export default function TopBar() {
           <li className="topListItem">
             <Link className="link" to="/write">WRITE</Link>
           </li>
-          <li className="topListItem">
+          <li className="topListItem" onClick={handlerLogout}>
             {user && 'LOGOUT'}
           </li>
         </ul>
       </div>
       <div className="topRight">
         {user ? (
-          <img className="topImg" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+          <img className="topImg" src={user.profilePic} alt="profilepicture" />
         ) : (
           <ul className="topList">
             <li className="topListItem">

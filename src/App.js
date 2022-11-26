@@ -5,6 +5,7 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
+import { useContext } from 'react';
 import TopBar from './components/topbar/TopBar';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
@@ -12,9 +13,10 @@ import Setting from './pages/settings/Setting';
 import DetailPost from './pages/detail/DetailPost';
 import WritePost from './pages/writepost/WritePost';
 import Home from './pages/home/Home';
+import { Context } from './context/Context';
 
 function App() {
-  const user = false;
+  const { user } = useContext(Context);
   return (
     <Router>
       <TopBar />
