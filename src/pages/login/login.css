@@ -43,6 +43,11 @@
     min-width: 44px;
 }
 
+.loginButton:disabled {
+    cursor: not-allowed;
+    background-color: rgb(255, 168, 168);
+}
+
 .loginButton:hover {
     opacity: 80%;
 }

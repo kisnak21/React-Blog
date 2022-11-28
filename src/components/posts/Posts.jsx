@@ -1,16 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Post from '../post/Post';
 import './posts.css';
 
-export default function Posts() {
+export default function Posts({ posts }) {
   return (
     <div className="posts">
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {posts.map((p) => (
+        <Post post={p} />
+      ))}
     </div>
   );
 }

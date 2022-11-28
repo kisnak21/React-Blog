@@ -1,27 +1,81 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/no-autofocus */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-empty */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import axios from 'axios';
+import React, { useEffect, useState, useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
 import './detail.css';
+import { Context } from '../../context/Context';
 
 export default function Detail() {
+  const location = useLocation();
+  const path = (location.pathname.split('/')[2]);
+  const [post, setPost] = useState({});
+  const PF = 'http://localhost:5000/images/';
+  const { user } = useContext(Context);
+  const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
+  const [updateMode, setUpdateMode] = useState(false);
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get(`http://localhost:5000/api/posts/${path}`);
+      setPost(res.data);
+      setTitle(res.data.title);
+      setDesc(res.data.desc);
+    };
+    getPost();
+  }, [path]);
+
+  const handlerDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:5000/api/posts/${path}`, { data: { username: user.username } });
+      window.location.replace('/');
+    } catch (error) { }
+  };
+
+  const handlerUpdate = async () => {
+    try {
+      await axios.put(`http://localhost:5000/api/posts/${path}`, { username: user.username, title, desc });
+      setUpdateMode(false);
+    } catch (error) { }
+  };
   return (
     <div className="detailpost">
       <div className="detailpostWrapper">
-        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="detailpostImg" />
-        <h1 className="detailpostTitle">
-          Lorem ipsum dolor sit amet.
-          <div className="detailpostEdit">
-            <i className="detailpostIcon fa-solid fa-pen-to-square" />
-            <i className="detailpostIcon fa-solid fa-trash" />
-          </div>
-        </h1>
+        {post.photo && (
+        <img src={PF + post.photo} alt="" className="detailpostImg" />
+        )}
+        {updateMode ? <input type="text" value={title} className="detailpostTitleInput" autoFocus onChange={(e) => setTitle(e.target.value)} /> : (
+
+          <h1 className="detailpostTitle">
+            {title}
+            {post.username === user?.username && (
+            <div className="detailpostEdit">
+              <i className="detailpostIcon fa-solid fa-pen-to-square" onClick={() => setUpdateMode(true)} />
+              <i className="detailpostIcon fa-solid fa-trash" onClick={handlerDelete} />
+            </div>
+            )}
+          </h1>
+        )}
         <div className="detailpostInfo">
           <span className="detailpostAuthor">
             Author:
-            {' '}
-            <b>Kisnak</b>
+            <Link to={`/?user=${post.username}`} className="link">
+              <b>{post.username}</b>
+            </Link>
           </span>
-          <span className="detailpostDate">1 hour ago</span>
+          <span className="detailpostDate">{new Date(post.createdAt).toDateString()}</span>
         </div>
-        <p className="detailpostDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident incidunt repudiandae exercitationem unde possimus? Repellat repellendus quas eligendi? Iusto in nesciunt, veniam iure, debitis nemo optio autem sunt provident maiores incidunt odio quo repellendus eum unde eligendi vitae. Quam, deserunt veritatis possimus incidunt soluta a excepturi pariatur quae et laboriosam beatae, sapiente nisi recusandae culpa accusamus ab saepe animi voluptatibus voluptatum sed. Illum, recusandae ipsum nam distinctio id laboriosam? Magnam, assumenda hic corporis esse voluptate facere dignissimos provident voluptates blanditiis amet necessitatibus ex nobis illo, accusantium ab obcaecati consectetur animi pariatur, ad incidunt commodi! Eveniet quibusdam harum ad iusto expedita? Unde aliquid distinctio magni dolores. Porro quisquam odio facere optio beatae maxime autem quidem, deserunt accusantium, blanditiis veritatis aliquam eveniet placeat aspernatur. Laudantium quos nihil ex enim eaque repellat quas, corporis perferendis maiores ipsa inventore, dolore est, ad aut! Nisi sapiente, quod amet quisquam eius provident nam voluptatum impedit iste?</p>
+        {updateMode ? <textarea className="detailpostDescInput" value={desc} onChange={(e) => setDesc(e.target.value)} /> : (
+          <p className="detailpostDesc">{desc}</p>
+        )}
+        {updateMode && (
+          <button className="detailPostButton" type="submit" onClick={handlerUpdate}>Update</button>
+        )}
       </div>
     </div>
   );

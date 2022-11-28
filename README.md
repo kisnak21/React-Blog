@@ -1,71 +1,46 @@
-# Getting Started with Create React App
+<h2 align="center"><img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="30"/> Gabut People Blog 🎉 <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="30"/></h2>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+    <a href="https://github.com/kisnak21/React-Blog/issues"><img src="https://img.shields.io/github/issues/kisnak21/React-Blog" alt="GitHub issues"></a>
+    <a href="https://github.com/kisnak21/React-Blog"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/kisnak21/React-Blog"></a>
+    <a href="https://github.com/kisnak21/React-Blog/pulls"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/kisnak21/React-Blog"></a>
+</p>
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+## Gabut People Blog
+Merupakan project yang beneran gabut dan iseng karena tertarik untuk belajar tentang MERN Stack. Jika teman-teman ingin berkontribusi (khususnya bagian UI sangat diperbolehkan xixi) juga silahkan open PR yaa! sans ini cuma project belajar kok xixi.
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
+Ini adalah beberapa core stack yang digunakan untuk membangun project saat ini: 
+- HTML , CSS
+- [TailwindCSS](https://tailwindcss.com) (Coming Soon xixi)
+- [React JS](https://reactjs.org/)
+- React-router
+- React-context-api
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup Development
+Untuk menjalankan projek ini dengan menggunakan npm secara lokal.
 
-### `npm run build`
+```
+$ git clone https://github.com/kisnak21/React-Blog.git
+$ cd React-Blog
+$ npm install
+$ npm start
+```
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Security Vulnerabilities
+Jika kalian menemukan sebuah kerentanan keamanan dalam project ini(wajar sih keknya karna masih project gabut xixi), silahkan buka issue. Dan semua kerentanan akan coba kami segera tangani.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## All Contributors
+Berikut adalah beberapa orang yang terlibat dalam pembuatan project Gabut People Blog. Terimakasih atas peran kontribusi yang telah menyumbangkan ide-idenya!
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# blog-gabut-react
+<a href="https://github.com/kisnak21/React-Blog/graphs/contributors"><img src="https://contrib.rocks/image?repo=kisnak21/React-Blog" alt="All of amazing contributors"></a>
