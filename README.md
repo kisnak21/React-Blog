@@ -9,7 +9,7 @@
 <br>
 
 ## Gabut People Blog
-Merupakan project yang beneran gabut dan iseng karena tertarik untuk belajar tentang MERN Stack. Jika teman-teman ingin berkontribusi juga silahkan open PR yaa! sans ini cuma project belajar kok xixi.
+Merupakan project yang beneran gabut dan iseng karena tertarik untuk belajar tentang MERN Stack. Jika teman-teman ingin berkontribusi (khususnya bagian UI sangat diperbolehkan xixi) juga silahkan open PR yaa! sans ini cuma project belajar kok xixi.
 
 <br>
 
